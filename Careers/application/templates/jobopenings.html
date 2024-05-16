@@ -1,0 +1,81 @@
+<div class="nk-content mt-4">
+<div class="container">
+    <div class="nk-content-inner">
+        <div class="nk-content-body">
+            <div class="nk-block">
+                <div class="row g-gs">
+                    {% for i in json_data %}
+                    <div class="col-sm-6 col-lg-4 col-xxl-3">
+                        <div class="card">
+                            <div class="card-inner">
+                                <div class="team">
+                                    <div class="user-card user-card-s2">
+                                        <div class="user-info" style="border-bottom:1px dashed #ccc;">
+                                            <h6 style="font-size: 1.25rem; font-family: inherit;
+                                                font-weight: 600;
+                                                line-height: 1.5;
+                                                margin-bottom: 0.5rem;
+                                                color: #32325d; ">{{i.job_title}}</h6>
+                                            <span class="sub-text"><em class="icon ni ni-map-pin-fill pe-1"></em>{{i.job_location}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-evenly 
+                                     mb-4 py-4" style="border-bottom:1px dashed #ccc">
+                                        <div class="experience pe-5" style="border-right:1px dashed #ccc">
+                                            <h5>{{i.no_of_vacancy}}</h5>
+                                            <span class="sub-text"> Position </span>
+                                        </div>
+                                        <div class="experience">
+                                            <h5>{{i.required_experience}}</h5>
+                                            <span class="sub-text"> Experience </span>
+                                        </div>
+                                    </div>
+                                    <div class="team-view">
+                                        <button name="action" value="view_page" onclick="viewpage({{i.id}})" class="btn btn-info" style="font-size: 14px;">View</button>
+                                    </div>
+                                </div><!-- .team -->
+                            </div><!-- .card-inner -->
+                        </div><!-- .card -->
+                    </div><!-- .col -->
+                    {% endfor %}
+                </div>
+            </div><!-- .nk-block -->
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+  function viewpage(view_id){
+    $.ajax({
+      method:'GET',
+      url: "{% url 'jobcards' %}",
+      data:{
+          action:"get_view_id",
+          view_id:view_id
+      },
+      success:function(data){
+        console.log("view_id", view_id)
+        $('#refresh-section').html(data)
+
+      }
+      
+    })
+  }
+</script>
+
+
+<!-- FOR SEO -->
+<!-- <script>
+    const jobTitles = [
+        {% for item in json_data %}
+            "{{ item.job_title }}"{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    ];
+
+    const key = document.querySelector("meta[name='keywords']");
+    key.setAttribute("content", jobTitles.join(', '));
+    console.log("Job Titles:", jobTitles);
+    // console.log("Meta Tag Content:", key.getAttribute("content"));
+</script> -->
+

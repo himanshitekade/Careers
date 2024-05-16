@@ -1,0 +1,259 @@
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm d-flex justify-content-center">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h6 class="nk-block-title page-title" style="font-family: 'Times New Roman', Times, serif;">Apply for this Job</h6>
+                            <div class="d-flex justify-content-end">
+							</div>
+                            <div class="nk-block-des text-soft">
+								{% if messages %}
+                                    {% for message in messages %}   
+                                        <div class="example-alert">
+                                            <div class="alert alert-{{ message.tags}} alert-dismissible alert-icon"><strong>{{message}}</strong><button class="close" data-bs-dismiss="alert"></button>
+                                            </div>
+                                        </div>
+                                    {% endfor %}   
+                                {% endif %}
+                            </div>
+                        </div><!-- .nk-block-head-content -->
+                        <div class="nk-block-head-content">
+                        </div><!-- .nk-block-head-content -->
+                    </div><!-- .nk-block-between -->
+                </div><!-- .nk-block-head -->
+                <form action="{% url 'jobcards' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}               
+                    <div class="nk-block">
+                        <div class="card card-bordered card-stretch">
+                            <div class="card-inner-group">
+                                <div class="card-inner position-relative card-tools-toggle">
+                                    <div class="row gy-4">
+                            			<div class="col-xxl-3 col-md-6">
+                                			<div class="form-group">
+                                				<label for="first_name" class="form-label"> First Name: </label>
+			                    				<span style="color:red;">*</span>
+			                  					<div class="form-control-wrap">
+				                  					<input type="text" class="form-control" id="first_name" name="first_name" maxlength="100" placeholder="Enter your first name" required onkeydown="return alphaOnly(event)"
+				                  					value="{{filled_data.first_name.0}}" >
+				                  				</div>	
+			                  				</div>
+                            			</div><!--col-->
+	
+                            			<div class="col-xxl-3 col-md-6">
+                                			<div class="form-group">
+                                				<label for="last_name" class="form-label"> Last Name: </label>
+			                    				<span style="color:red;">*</span>
+			                  					<div class="form-control-wrap">
+				                  					<input type="text" class="form-control" id="last_name" name="last_name" maxlength="100" value="{{filled_data.last_name.0}}" placeholder="Enter your last name"    required  onkeydown="return alphaOnly(event)"  >
+				                  				</div>	
+			                  				</div>
+                            			</div><!--col-->
+
+                            			<div class="col-xxl-3 col-md-6">
+											<div class="form-group">
+												<label for="email" class="form-label"> Email </label>
+												
+												<span style="color:red;">*</span>
+												  
+												  <div class="form-control-wrap">
+													  <input type="email" class="form-control" id="email" name="email" value="{{filled_data.email.0}}" placeholder="Enter email here..."  maxlength="50"       
+														required
+													   >
+												  </div>
+											  </div>
+									  	</div><!--col-->
+
+									  	<div class="col-xxl-3 col-md-6">
+											<div class="form-group">
+												<label for="mobile" class="form-label"> Mobile No. </label>
+												
+												<span style="color:red;">*</span>
+												  
+												  <div class="form-control-wrap">
+													  <input type="tel" class="form-control" id="mobile" name="mobile" value="{{filled_data.mobile.0}}"  placeholder="Enter mobile number here..." maxlength="13" pattern="(\+91)?[0-9]{10}" required >
+												  </div>
+											  </div>
+										  </div><!--col-->
+
+                            			
+										  	<div class="col-xxl-3 col-md-6">
+	                                			<div class="form-group">
+	                                				<label for="date_of_birth" class="form-label">Date Of Birth</label>
+													
+				                    				<span style="color:red;">*</span>
+				                  					
+				                  					<div class="form-control-wrap">
+														<input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{filled_data.date_of_birth.0}}"  placeholder="Enter your date_of_birth here..."    
+														required >
+														 
+					                  				</div>	
+				                  				</div>
+                                        	</div>
+			                            	
+
+			                            	<div class="col-xxl-3 col-md-6">
+	                            			<div class="form-group">
+	                            				<label for="gender" class="form-label"> Gender </label>
+												
+				                    			<span style="color:red;">*</span>
+												<div class="form-control-wrap">
+													<input type="radio" value="Male" name="gender"  
+													 >Male
+												</div>
+												<div class="form-control-wrap">
+													<input type="radio" value="Female" name="gender"   >Female
+												</div>
+												<div class="form-control-wrap">
+													<input type="radio" value="other" name="gender"   >Other
+												</div>
+	                            			</div>
+                                        </div><!--col-->
+
+                                        <div class="col-xxl-3 col-md-6">
+	                            			<div class="form-group">
+	                            				<label for="current_locations" class="form-label">Prefered Location</label>
+												
+			                    				<span style="color:red;">*</span>
+			                  					
+			                  					<div class="form-control-wrap">
+													<input type="text" class="form-control" id="current_locations" name="current_locations" value="{{filled_data.current_locations.0}}"  placeholder="Enter your current location here..."    
+														required onkeydown="return alphaOnly(event)" >
+				                  				</div>	
+			                  				</div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-6">
+                                			<div class="form-group">
+                                    			<label for="expected_salary" class="form-label"> Expected Salary </label>
+												
+				                    			<span style="color:red;">*</span>
+				                  						
+                                    			<div class="form-control-wrap">
+													<input type="number" class="form-control" id="expected_salary" name="expected_salary" required  placeholder="Enter expected salary..."
+													value="{{filled_data.expected_salary.0}}"
+													>
+												</div>	
+											</div>    
+                                        </div><!--col-->
+
+                                        <div class="col-xxl-3 col-md-6">
+	                            			<div class="form-group">
+	                                			<label for="notice_period" class="form-label"> Notice Period(Days) </label>	
+	                                			<div class="form-control-wrap">
+													<input type="number" class="form-control" id="notice_period" name="notice_period"  placeholder="Enter notice period days..." value="{{filled_data.notice_period.0}}"
+													>
+												</div>	
+											</div>    
+	                            		</div><!--col-->
+                                         
+                                         <div class="col-xxl-3 col-md-6">
+                                			<div class="form-group">
+                                				<label for="current_previous_company" class="form-label"> Current/Previous Company </label>
+			                  					<div class="form-control-wrap">
+				                  					<input type="text" class="form-control" id="current_previous_company" name="current_previous_company" value="{{filled_data.current_previous_company.0}}" placeholder="Enter details">
+				                  				</div>	
+			                  				</div>
+                            			</div><!--col-->
+
+                            			<div class="col-xxl-3 col-md-6">
+                                			<div class="form-group">
+                                    			<label for="experience" class="form-label"> Experience (in years) </label>
+				                    			<span style="color:red;">*</span>		
+                                    			<div class="form-control-wrap">
+													<input type="number" class="form-control" id="experience" name="experience" required placeholder="Enter experience in years" 
+													value="{{filled_data.experience.0}}">
+												</div>	
+											</div>    
+                                		</div><!--col-->
+
+											<div class="col-xxl-3 col-md-6">
+                                    			<div class="form-group">
+                                    				<label for="attachment" class="form-label">Upload Resume/CV </label>
+													
+					                    			<span style="color:red;">*</span>
+					                  				
+					                  				<div class="form-control-wrap">
+														<input type="file" class="form-control" id="attachment" name="attachment" required accept=".pdf">
+					                  				</div>
+					                  			</div>
+					                  		</div>
+	                  								
+                                        	<div class="col-xxl-3 col-md-6">
+                                    			<div class="form-group">
+                                    				<label for="linkedin_url" class="form-label">Linkedin account link</label>
+												
+				                  					<div class="form-control-wrap">
+														<input type="url" class="form-control" id="linkedin_url" name="linkedin_url" value="{{filled_data.linkedin_url.0}}"  placeholder="Enter your linkedin url here..."    
+														  >
+					                  				</div>	
+				                  				</div>
+                                        	</div>
+
+												<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="facebook_url" class="form-label">Facebook account link</label>
+															
+						                    				<!-- <span style="color:red;">*</span> -->
+						                  					
+						                  					<div class="form-control-wrap">
+																<input type="url" class="form-control" id="facebook_url" name="facebook_url" value="{{filled_data.facebook_url.0}}"  placeholder="Enter your facebook url here..."    
+																 >
+							                  				</div>	
+						                  				</div>
+                                        			</div>
+													
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="instagram_url" class="form-label">Instagram account link</label>
+						                    				<!-- <span style="color:red;">*</span> -->
+						                  					<div class="form-control-wrap">
+																<input type="url" class="form-control" id="instagram_url" name="instagram_url" value="{{filled_data.instagram_url.0}}"  placeholder="Enter your instagram url here..."    
+																 >
+							                  				</div>	
+						                  				</div>
+                                        			</div>
+													
+													<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="twitter_url" class="form-label">Twitter account link</label>
+															
+						                    				<!-- <span style="color:red;">*</span> -->
+						                  					
+						                  					<div class="form-control-wrap">
+																<input type="url" class="form-control" id="twitter_url" name="twitter_url" value="{{filled_data.twitter_url.0}}"  placeholder="Enter your twitter url here..."    
+																 >
+							                  				</div>	
+						                  				</div>
+                                        			</div>
+
+                                        			<input type="text" name="view_id" value="{{view_id}}" hidden>
+													
+													<div class="col-12 d-flex justify-content-end me-5">
+														<div class="form-group">
+															<button type="submit" class="btn btn-info " name= "action" value="submit" id="submit"
+															>Apply now</button>
+													</div><!--col-->	      
+                                    </div><!--row-->
+                                </div><!-- .card-inner -->
+                            </div><!-- .card-inner-group -->
+                        </div><!-- .card -->
+                    </div><!-- .nk-block -->
+                </form>
+           	</div>
+        </div>
+    </div>
+</div>
+
+<!-- For Entering only CharField in fields like First Name, Last Name -->
+<script>
+function alphaOnly(event) {
+  var key = event.keyCode;
+  return ((key >= 65 && key <= 90) || key == 8);
+};
+</script>
+<!-- End of script -->
+
+
+<!-- Date should less than current date -->
+

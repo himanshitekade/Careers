@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{% static 'assets/images/FSC_logo.jpeg' %}">
+    <!-- Page Title  -->
+    <title>Fluidscapes-Career | Apply-now</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="{% static 'assets/css/dashlite.css' %}">
+    <link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+</head>
+
+<body class="nk-body ui-rounder">
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div class="nk-sidebar-element nk-sidebar-head">
+                    <div class="nk-sidebar-brand">
+                        <a href="html/index.html" class="logo-link nk-sidebar-logo logo">
+                            <img class="logo-light logo-img" src="{% static 'assets/images/fsc_animated_logo_black.gif' %}" srcset="{% static 'assets/images/fsc_animated_logo_black.gif' %}" alt="logo">
+                            <img class="logo-dark logo-img" src="{% static 'assets/images/fsc_animated_logo_black.gif' %}" srcset="{% static 'assets/images/fsc_animated_logo_black.gif' %}" alt="logo-dark">
+                            <img class="logo-small logo-img logo-img-small" src="./images/fsc_animated_logo_black.gif" srcset="{% static 'assets/images/fsc_animated_logo_black.gif' %}" alt="logo-small">
+                        </a>
+                    </div>
+                    <div class="nk-menu-trigger me-n2">
+                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
+                    </div>
+                </div><!-- .nk-sidebar-element -->
+                <!-- main header @e -->
+                <!-- content @s -->
+                <div id="refresh-section">
+                    {% include 'jobopenings.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- wrap @e -->
+</div>
+<!-- main @e -->
+</div>
+<!-- app-root @e -->
+<!-- JavaScript -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+</body>
+</html>
+
+
+
+

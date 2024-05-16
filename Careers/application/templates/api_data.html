@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXXN3BD');</script>
+    <!-- End Google Tag Manager -->
+
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{% static 'assets/images/FSC_logo.jpeg' %}">
+    <!-- Page Title  -->
+    <title>Fluidscapes - Career | Apply now</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/dashlite.css' %}">
+    <link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+</head>
+
+<body class="nk-body ui-rounder">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXXN3BD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div class="nk-sidebar-element nk-sidebar-head">
+                    <div class="nk-sidebar-brand">
+                        <a href="#" class="logo-link nk-sidebar-logo">
+                            <img class="logo-light logo-img" src="{% static 'assets/images/logo.jpg' %}" srcset="{% static 'assets/images/logo.jpg' %}" alt="logo">
+                            <img class="logo-dark logo-img" src="{% static 'assets/images/logo.jpg' %}" srcset="{% static 'assets/images/logo.jpg' %}" alt="logo-dark">
+                            <img class="logo-small logo-img logo-img-small" src="./images/logo-small.png" srcset="{% static 'assets/images/logo.jpg' %}" alt="logo-small">
+                        </a>
+                    </div>
+                    <div class="nk-menu-trigger me-n2">
+                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
+                    </div>
+                </div><!-- .nk-sidebar-element -->
+                <!-- main header @e -->
+                <!-- content @s -->
+                <div class="row d-flex justify-content-center align-items-center p-3 border">
+                    {% for i in json_data %}
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="card" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px; width:25rem; height: 15rem" >
+                            <div class="card-inner">
+                                <div class="team">
+                                    <div class="user-card user-card-s2">
+                                        <div class="user-primary">
+                                            <h6 class="card-title title" style="font-size: 18px; line-height: 1.2em;">{{i.job_title}}</h6>
+                                            <span class="sub-text" style="font-size: 14px;"><em class="icon ni ni-map-pin-fill"></em>{{i.job_location}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between p-2">
+                                        <div>
+                                            <h6 style="font-size: 16px; margin-bottom: 5px;">{{i.no_of_vacancy}}</h6>
+                                            <h6>Position</h6>
+                                        </div>
+                                        <div>
+                                            <h6 style="font-size: 16px; margin-bottom: 5px;">{{i.required_experience}}</h6>
+                                            <h6>Experience</h6>
+                                        </div>
+                                    </div>
+                                    <div class="user-card user-card-s2">
+                                        <div class="my-2">
+                                            <button name="action" value="view_page" onclick="viewpage({{i.id}})" class="btn btn-info" style="font-size: 14px;">view</button> <!-- Adjusted button font size -->
+                                        </div>
+                                    </div>
+                                    </div><!-- .team -->
+                                </div><!-- .card-inner -->
+                            </div><!-- .card -->
+                        </div><!-- .col -->
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- wrap @e -->
+</div>
+<!-- main @e -->
+</div>
+<!-- app-root @e -->
+
+    <!-- JavaScript -->
+
+<script>
+  function viewpage(view_id){
+    $.ajax({
+      method:'GET',
+      url: "{% url 'fetch' %}",
+      data:{
+          action:"get_view_id",
+          view_id:view_id
+      },
+      success:function(data){
+        console.log("data",data)
+
+      }
+      
+    })
+  }
+</script>
+    <script src="{% static 'assets/js/bundle.js' %}"></script>
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+</body>
+
+</html>
+

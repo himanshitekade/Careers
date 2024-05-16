@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXXN3BD');</script>
+    <!-- End Google Tag Manager -->
+    <base href="../">
+    <meta charset="utf-8">
+    <!-- <meta name="keywords" content="{% block keywords %}{% endblock %}"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{% static 'assets/images/FSC_logo.png' %}">
+    <!-- Page Title  -->
+    <title>Fluidscapes-Career | Apply now</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/dashlite.css' %}">
+    <link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="stars" rel="stylesheet" href="{% static 'assets/css/stars.css' %}">
+
+</head>
+
+<body class="nk-body bg-lighter npc-default has-sidebar ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXXN3BD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap p-0">
+                <!-- main header @s -->
+                <div class="nk-header">
+                    <div class="container">
+                        <div class="nk-header-wrap">
+                            <div class="nk-header-brand">
+                                <a href="html/index.html" class="logo-link">
+                                    <img class="logo-light logo-img logo-img-xl" src="{% static 'assets/images/fsc_animated_logo_black.gif' %}" srcset="{% static 'assets/images/fsc_animated_logo_black.gif' %}" alt="logo">
+                                    <img class="logo-dark logo-img logo-img-xl" src="{% static 'assets/images/fsc_animated_logo_black.gif' %}" srcset="{% static 'assets/images/fsc_animated_logo_black.gif' %}" alt="logo-dark">
+                                </a>
+
+                            </div><!-- .nk-header-brand -->
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+                                    <li class="dropdown notification-dropdown">
+                                        <a href="https://www.fluidscapes.in/" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown" target="_blank">
+                                           <i class="fa fa-home"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-header-wrap -->
+                    </div><!-- .container-fliud -->
+                </div>
+                <!-- main header @e -->
+                <div class="container-fluid p-0">
+                    <div class="background_spces" style="background-color: #00A0E3;">
+                        <h2 class="text-white text-center" style="padding: 50px 0; font-family: politica, sans-serif; font-weight: 580; font-size: 50px;">Fluidscapes Careers</h2>
+                    </div>
+                </div>
+                <div class="header star_wrapper myheader" style="height: 40px;">
+                   <div id="stars"></div>
+                   <div id="stars2"></div>
+                   <div id="stars3"></div>
+                   <h1 id="title">Fluidscapes Careers</h1>
+               </div>
+
+                <!-- content @s -->
+                <!-- <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="background_space">
+                                <h1>Fluidscapes Careers</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div id="refresh-section">
+                    {% include 'jobopenings.html' %}
+                </div>
+            </div>
+        </div>
+
+         <!-- footer @s -->
+            <div class="nk-footer bg-white">
+                <div class="container-fluid">
+                    <div class="nk-footer-wrap">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright"> &copy; 2023 
+                                <a style="color: #00A0E3;" href="https://www.fluidscapes.in/" target="_blank">Fluidscapes Consultant Pvt.Ltd</a>
+                            </div>
+                        </div>
+                        <div class="nk-footer-links">
+                            <ul class="nav nav-sm">
+                                <li class="nav-item dropup">
+                                    <a href="https://www.fluidscapes.in/who-we-are/" class="dropdown-toggle text-base" data-bs-toggle="dropdown" data-offset="0,10" target="_blank"  style="color: #00A0E3;"><span>About Us</span></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a data-bs-toggle="modal" href="https://www.fluidscapes.in/blogs/"  style="color: #00A0E3;" class="nav-link"></em><span class="ms-1">Blog</span></a>
+                                </li>
+                                 <li class="nav-item dropup">
+                                    <a href="https://www.fluidscapes.in/privacy-policy/" class="dropdown-toggle text-base" data-bs-toggle="dropdown" data-offset="0,10" style="color: #00A0E3;" target="_blank"><span>Privacy Policy</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer @e -->
+    </div>
+
+    
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+<!-- <script >
+const title = document.querySelector("title");
+title.innerText = "This title is dynamically generated using javascript";
+console.log(title);
+</script> -->
+
+<!-- <script>
+    const key = document.querySelector("meta[name='keywords']");
+    key.setAttribute("content", "{{job_title}}");
+    console.log(key);
+</script> -->
+
+
+</body>
+</html>

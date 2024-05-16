@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{% static 'assets/images/FSC_logo.png' %}">
+    <!-- Page Title  -->
+    <title>Fluidscapes-Career | Apply now</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/dashlite.css' %}">
+    <link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="stars" rel="stylesheet" href="{% static 'assets/css/stars.css' %}">
+</head>
+<body class="nk-body bg-lighter npc-default has-sidebar ">
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap p-0">
+                <!-- main header @s -->
+                <div class="nk-header">
+                    <div class="container">
+                        <div class="nk-header-wrap">
+                            <div class="nk-header-brand">
+                                <a href="html/index.html" class="logo-link">
+                                    <img class="logo-light logo-img logo-img-xl" src="{% static 'assets/images/fsc_animated_logo_black.gif' %}" srcset="{% static 'assets/images/fsc_animated_logo_black.gif' %}" alt="logo">
+                                    <img class="logo-dark logo-img logo-img-xl" src="{% static 'assets/images/fsc_animated_logo_black.gif' %}" srcset="{% static 'assets/images/fsc_animated_logo_black.gif' %}" alt="logo-dark">
+                                </a>
+
+                            </div><!-- .nk-header-brand -->
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+                                    <li class="dropdown notification-dropdown">
+                                        <a href="https://www.fluidscapes.in/" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown" target="_blank">
+                                           <i class="fa fa-home"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-header-wrap -->
+                    </div><!-- .container-fliud -->
+                </div>
+            <div class="card">
+            <div class="nk-content nk-content-fluid">
+                <div class="container-xl wide">
+                    <div class="nk-content-body">
+                        <div class="content-page wide-lg">
+                            <div class="nk-block">
+                                <article class="entry">
+                                     <div class="card-inner">
+                                            <div class="team">
+                                                <div class="user-card user-card-s2">
+                                                    <div class="user-info">
+                                                        <h4 style="font-family: Open Sans, sans-serif;; font-size: 1.5rem; font-weight: 300; line-height: 1.7; margin-top: 0; margin-bottom: 1rem;">About Us</h4>
+                                                            <div class="mb-3">
+                                                                {% for i in company_json_data %}
+                                                                    <p style="font-size: 1rem; font-weight: 300; line-height: 1.7; margin-top: 0; margin-bottom: 1rem;">{{ i.description }}</p>
+                                                                {% endfor %}
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                     
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center my-4">
+                <video width="900" height="360" controls>
+                    <source src="{% static 'assets/images/fsc_video.mp4' %}" type="video/mp4">
+                </video>
+            </div>
+            <div class="d-flex justify-content-end me-4 my-4">
+                <button name="action" id="fetchButton" value="fetch_page" class="btn btn-info" style="font-size: 14px;">Job Openings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer @s -->
+            <div class="nk-footer bg-white">
+                <div class="container-fluid">
+                    <div class="nk-footer-wrap">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright"> &copy; 2023 
+                                <a style="color: #00A0E3;" href="https://www.fluidscapes.in/" target="_blank">Fluidscapes Consultant Pvt.Ltd</a>
+                            </div>
+                        </div>
+                        <div class="nk-footer-links">
+                            <ul class="nav nav-sm">
+                                <li class="nav-item dropup">
+                                    <a href="https://www.fluidscapes.in/who-we-are/" class="dropdown-toggle text-base" data-bs-toggle="dropdown" data-offset="0,10" target="_blank"  style="color: #00A0E3;"><span>About Us</span></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a data-bs-toggle="modal" href="https://www.fluidscapes.in/blogs/"  style="color: #00A0E3;" class="nav-link"></em><span class="ms-1">Blog</span></a>
+                                </li>
+                                 <li class="nav-item dropup">
+                                    <a href="https://www.fluidscapes.in/privacy-policy/" class="dropdown-toggle text-base" data-bs-toggle="dropdown" data-offset="0,10" style="color: #00A0E3;" target="_blank"><span>Privacy Policy</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer @e -->
+
+
+</div>
+</body>
+
+<script>
+    document.getElementById("fetchButton").addEventListener("click", function() {
+        window.location.href = "{% url 'jobcards' %}";
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
